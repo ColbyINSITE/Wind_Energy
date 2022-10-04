@@ -26,7 +26,10 @@ public class FogLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(this.transform.position, turbine.transform.position);
+        if (this != null && turbine != null)
+        {
+            dist = Vector3.Distance(this.transform.position, turbine.transform.position);
+        }
     
         if (dist < minDist && preDist > dist)
         {
