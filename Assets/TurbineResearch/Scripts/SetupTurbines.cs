@@ -28,13 +28,13 @@ public class SetupTurbines : MonoBehaviour
         tx = transform.position.x;
         ty = transform.position.y;
         tz = transform.position.z;
-        height = distance * (Mathf.sqrt(3)/2);
+        height = distance * (Mathf.Sqrt(3)/2);
         center = transform.position;
 
         List<Vector3> positions = CalculatePositions();
-        for (Vector3 position : positions) 
+        foreach (Vector3 position in positions) 
         {
-            Instantiate(turbine, position, transform.rotation)
+            Instantiate(turbine, position, transform.rotation);
         }
     }
 
@@ -43,15 +43,15 @@ public class SetupTurbines : MonoBehaviour
         List<Vector3> positions = new List<Vector3>();
         for (int i = 0; i < 4; i++)
         {
-            positions.add(new Vector3(tx+(-1.5+i)*distance, ty, tz));
+            positions.Add(new Vector3(tx+(-1.5f+i)*distance, ty, tz));
         }
         for (int i = 0; i < 3; i++)
         {
-            positions.add(new Vector3(tx+(-1+i)*distance, ty, tz+height));
+            positions.Add(new Vector3(tx+(-1+i)*distance, ty, tz+height));
         }
         for (int i = 0; i < 3; i++)
         {
-            positions.add(new Vector3(tx+(-1+i)*distance, ty, tz-height));
+            positions.Add(new Vector3(tx+(-1+i)*distance, ty, tz-height));
         }
         return positions;
     }
