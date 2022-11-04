@@ -8,8 +8,11 @@ public class MovePlayer : MonoBehaviour
     public Transform[] player_locations;
     public Transform[] boat_locations;
     public Transform boat;
+    public Transform turbine;
+    public Transform newTurbine;
     private int player_currentLocation = 0;
     private int boat_currentLocation = 0;
+    private int turbine_curLocation = 0;
     private bool switchScene = false;
     private string[] scenes = { "Turbines - DayScene", "Turbines - Evening", "Turbines - Night" };
     private int index = 1;
@@ -18,28 +21,17 @@ public class MovePlayer : MonoBehaviour
     void Update()
     {
         /* Teleport the player between 6 locations respectively: mountain, beach, and 4.5 miles,
-         * 1 mile, 400 feet from the wind turbine (1)
-         * If the boat is going through all of the 6 location, switch to the next scene in this order:
-         * "Turbines - Day" is currently played, then "Turbines - Evening", then "Turbines - Night"
+         * 1 mile, 400 feet, 100 feet from the wind turbine, within Array View
         */
         if (Input.GetKeyDown(KeyCode.Return) && player_locations.Length > 0 && boat_locations.Length > 0)
         {
             if (player_currentLocation >= 2)
             {
-                /*
-                if (player_currentLocation >= 7)
+                if (boat_currentLocation >= 5 && turbine != null)
                 {
-                    Debug.Log(scenes[index]);
-                    switchScene = true;
-                    SceneManager.LoadScene(sceneName: scenes[index]);
-                    index++;
-                    Debug.Log(index);
+                    turbine.position = newTurbine.position;
                 }
-                */
-
-                Debug.Log(player_currentLocation.ToString());
-
-                if (boat != null && this != null && !switchScene)
+                else if (boat != null && this != null && !switchScene)
                 {
                     boat.position = boat_locations[(++boat_currentLocation) % boat_locations.Length].position;
                     this.transform.position = player_locations[(++player_currentLocation) % player_locations.Length].position;

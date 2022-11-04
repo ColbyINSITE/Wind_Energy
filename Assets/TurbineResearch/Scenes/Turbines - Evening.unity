@@ -710,6 +710,8 @@ MonoBehaviour:
   - {fileID: 1950963719}
   - {fileID: 1176691085}
   boat: {fileID: 177527023}
+  turbine: {fileID: 0}
+  newTurbine: {fileID: 0}
 --- !u!114 &98067962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2328,6 +2330,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 457536134579858462, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 730438682417706724, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: 1.04e-43
@@ -2376,6 +2382,10 @@ PrefabInstance:
       propertyPath: m_BakedTexture
       value: 
       objectReference: {fileID: 8900000, guid: 1a6af380ecb814709894514afcf67c8f, type: 3}
+    - target: {fileID: 4889430476017852415, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5341715879261983327, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4923,6 +4933,8 @@ MonoBehaviour:
   - {fileID: 1479930451}
   - {fileID: 1765451725}
   boat: {fileID: 0}
+  turbine: {fileID: 0}
+  newTurbine: {fileID: 0}
 --- !u!1 &1269626466
 GameObject:
   m_ObjectHideFlags: 0
