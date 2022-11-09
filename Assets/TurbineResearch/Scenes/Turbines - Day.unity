@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 772.00195, g: 956.5537, b: 1266.0254, a: 1}
+  m_IndirectSpecularColor: {r: 771.2002, g: 955.53906, b: 1264.6924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -4621,16 +4621,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2002747722171881573, guid: d222ce5ae09ccb44c83b13832cc80381, type: 3}
-      propertyPath: m_Drag
-      value: 200000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2002747722171881573, guid: d222ce5ae09ccb44c83b13832cc80381, type: 3}
       propertyPath: m_Mass
       value: 5000000
       objectReference: {fileID: 0}
     - target: {fileID: 2002747722171881573, guid: d222ce5ae09ccb44c83b13832cc80381, type: 3}
       propertyPath: m_AngularDrag
-      value: 5
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 2002747722171881573, guid: d222ce5ae09ccb44c83b13832cc80381, type: 3}
       propertyPath: m_Constraints
@@ -4702,7 +4698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6211049208616957749, guid: d222ce5ae09ccb44c83b13832cc80381, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.89
+      value: 4.735
       objectReference: {fileID: 0}
     - target: {fileID: 6211049208616957749, guid: d222ce5ae09ccb44c83b13832cc80381, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4767,7 +4763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _version: 0
   _bottomH: 0
-  _buoyancyCoeff: 50
+  _buoyancyCoeff: 100
   _boyancyTorque: 1.5
   _accelerateDownhill: 0
   _forceHeightOffset: 0
@@ -5299,7 +5295,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149349439}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d977749f2b98b764388f6dfe5fb0fa3a, type: 3}
   m_Name: 
@@ -7560,7 +7556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _version: 0
-  _globalWindSpeed: 14.240504
+  _globalWindSpeed: 11.392403
   _viewpoint: {fileID: 0}
   _camera: {fileID: 0}
   _timeProvider: {fileID: 0}
