@@ -12,10 +12,6 @@ public class MovePlayer : MonoBehaviour
     public Transform newTurbine;
     private int player_currentLocation = 0;
     private int boat_currentLocation = 0;
-    private int turbine_curLocation = 0;
-    private bool switchScene = false;
-    private string[] scenes = { "Turbines - DayScene", "Turbines - Evening", "Turbines - Night" };
-    private int index = 1;
 
     // Update is called once per frame
     void Update()
@@ -27,15 +23,15 @@ public class MovePlayer : MonoBehaviour
         {
             if (player_currentLocation >= 2)
             {
-                if (boat_currentLocation >= 5 && turbine != null)
+                if (boat_currentLocation >= 4 && turbine != null)
                 {
                     turbine.position = newTurbine.position;
                 }
-                else if (boat != null && this != null && !switchScene)
+                else if (boat != null && this != null)
                 {
                     boat.position = boat_locations[(++boat_currentLocation) % boat_locations.Length].position;
                     this.transform.position = player_locations[(++player_currentLocation) % player_locations.Length].position;
-                }
+                }   
             }
             else
             {
