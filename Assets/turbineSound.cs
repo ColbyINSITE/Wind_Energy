@@ -5,6 +5,7 @@ using UnityEngine;
 public class turbineSound : MonoBehaviour
 {
     public Transform[] teleportLocations;
+    public Transform boat;
 
     // an array to store Volume in AudioSource of turbines' MotorSound
     // 5 mile, 2.5 mile, 1 mile, 400f, within array distance respectively
@@ -32,7 +33,7 @@ public class turbineSound : MonoBehaviour
         }
 
         // If player is at 2.5 mile distance
-        if (this.transform.position == teleportLocations[1].position)
+        if (boat.position == teleportLocations[1].position)
         {
             for (int i = 0; i < motorSounds.Length; i++)
             {
@@ -42,7 +43,7 @@ public class turbineSound : MonoBehaviour
         }
 
         // If player is at 1 mile distance
-        if (this.transform.position == teleportLocations[2].position)
+        if (boat.position == teleportLocations[2].position)
         {
             for (int i = 0; i < motorSounds.Length; i++)
             {
@@ -52,7 +53,7 @@ public class turbineSound : MonoBehaviour
         }
 
         // If player is at 400f distance
-        if (this.transform.position == teleportLocations[3].position)
+        if (boat.position == teleportLocations[3].position)
         {
             for (int i = 0; i < motorSounds.Length; i++)
             {
@@ -62,12 +63,22 @@ public class turbineSound : MonoBehaviour
         }
 
         // If player is within the array
-        if (this.transform.position == teleportLocations[4].position)
+        if (boat.position == teleportLocations[4].position)
         {
             for (int i = 0; i < motorSounds.Length; i++)
             {
                 motorSounds[i].transform.GetComponent<AudioSource>().volume = volumes[4];
                 motorSounds[i].transform.GetComponent<AudioSource>().maxDistance = maxDis[4];
+            }
+        }
+
+        // After the transit 
+        if (turbine_1.position == teleportLocations[5].position)
+        {
+            for (int i = 0; i < motorSounds.Length; i++)
+            {
+                motorSounds[i].transform.GetComponent<AudioSource>().volume = volumes[5];
+                motorSounds[i].transform.GetComponent<AudioSource>().maxDistance = maxDis[5];
             }
         }
     }
