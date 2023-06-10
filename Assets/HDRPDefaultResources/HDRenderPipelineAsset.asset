@@ -224,9 +224,9 @@ MonoBehaviour:
     colorBufferFormat: 74
     supportCustomPass: 1
     customBufferFormat: 12
-    supportedLitShaderMode: 2
+    supportedLitShaderMode: 1
     planarReflectionResolution:
-      m_Values: 000100000004000000080000
+      m_Values: 000100000004000000040000
       m_SchemaId:
         m_Id: With3Levels
     supportDecals: 1
@@ -239,7 +239,7 @@ MonoBehaviour:
     decalLayerName5: Decal Layer 5
     decalLayerName6: Decal Layer 6
     decalLayerName7: Decal Layer 7
-    msaaSampleCount: 1
+    msaaSampleCount: 4
     supportMotionVectors: 1
     supportRuntimeDebugDisplay: 0
     supportRuntimeAOVAPI: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
       AOMaximumRadiusPixels: 200000002800000050000000
       AOBilateralUpsample: 000101
       AODirectionCount: 010000000200000004000000
-      ContactShadowSampleCount: 060000000a00000010000000
+      ContactShadowSampleCount: 060000000a00000020000000
       SSRMaxRaySteps: 100000002000000040000000
       RTAORayLength:
       - 0.5
