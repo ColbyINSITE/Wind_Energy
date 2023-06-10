@@ -11,7 +11,7 @@ Shader "Hidden/GlobalFogExtended"
 	#include "UnityCG.cginc"
 
 	uniform sampler2D _MainTex;
-	uniform sampler2D_float _CameraDepthTexture;
+	UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
 	
 	// x = fog height
 	// y = FdotC (CameraY-FogHeight)
