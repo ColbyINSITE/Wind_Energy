@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/TurbineResearch/Scenes/Turbines - Day.unity
     guid: 188e9e9b1d7f22d46b8a76f170744ce8
   - enabled: 0
     path: Assets/TurbineResearch/Scenes/Turbines - Evening.unity
     guid: 69b55d6ca2ed2224381b17114f63c048
-  - enabled: 1
+  - enabled: 0
     path: Assets/TurbineResearch/Scenes/Turbines - Night.unity
     guid: afe681e349da65c468ef5679f7f98ddd
   m_configObjects:
