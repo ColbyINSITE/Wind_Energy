@@ -8,7 +8,8 @@ public class SetupRopes : MonoBehaviour
 {
     private CSVReader csvReader;
     private List<List<float>> table;
-    
+
+    public Material ropeMat;
     
     
     void Start()
@@ -41,6 +42,7 @@ public class SetupRopes : MonoBehaviour
         GameObject solverObject = new GameObject("solver", typeof(ObiSolver), typeof(ObiFixedUpdater));
         ObiSolver solver = solverObject.GetComponent<ObiSolver>();
         ObiFixedUpdater updater = solverObject.GetComponent<ObiFixedUpdater>();
+        updater.substeps = 8;
 
         // add the solver to the updater:
         updater.solvers.Add(solver);
@@ -59,7 +61,11 @@ public class SetupRopes : MonoBehaviour
 
         // load the default rope section:
         ropeRenderer.section = Resources.Load<ObiRopeSection>("DefaultRopeSection");
-
+        
+        // set rope material
+        ropeObject.GetComponent<MeshRenderer>().material = ropeMat;
+        
+        // create a blueprint 
         ObiRopeBlueprint blueprint = ScriptableObject.CreateInstance<ObiRopeBlueprint>();
 
         SetupBlueprint(blueprint);
