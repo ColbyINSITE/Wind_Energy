@@ -8,10 +8,7 @@ public class RopeAnimator : MonoBehaviour
     
     private void Start()
     {
-        foreach (RopeCreator rp in RopeCreators)
-        {
-            AnimateRopes(rp);
-        }
+        StartCoroutine(StartAnimation(0));
     }
 
     private void AnimateRopes(RopeCreator rp)
@@ -45,10 +42,25 @@ public class RopeAnimator : MonoBehaviour
         while (timeStep < lerpDuration)
         {
             node.position = Vector3.Lerp(startPosition, endPosition, timeStep/lerpDuration);
-            timeStep += 0.005f;
+            timeStep += Time.deltaTime;
             yield return null;
         }
 
         node.position = endPosition;
+    }
+
+    IEnumerator StartAnimation(float waitTime)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < waitTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        
+        foreach (RopeCreator rp in RopeCreators)
+        {
+            AnimateRopes(rp);
+        }
     }
 }

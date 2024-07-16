@@ -11,16 +11,18 @@ public class RopeCreator : MonoBehaviour
     private List<List<float>> table;
     private int nodeCount = 0;
 
+    public GameObject _solver;
     public List<GameObject> linkPrefabs;
     public TextAsset csvFile; 
     public Material ropeMat;
-    public int skipLines;
-    public bool isChain;
+    public int _skipLines;
+    public bool _isChain;
+    public float _thicknessScale;
     
     void Awake()
     {
         csvReader = new CSVReader();
-        table = csvReader.ReadCSVFile(Application.dataPath + "\\TurbineResearch\\CSV Files\\" + csvFile.name +".csv", skipLines);
+        table = csvReader.ReadCSVFile(Application.dataPath + "\\TurbineResearch\\CSV Files\\" + csvFile.name +".csv", _skipLines);
         SetupRope(); 
     }
 
@@ -40,22 +42,6 @@ public class RopeCreator : MonoBehaviour
         blueprint.path.FlushEvents();
     }
 
-    ObiSolver CreateSolver()
-    {
-        // create an object containing both the solver and the updater:
-        GameObject solverObject = new GameObject("solver", typeof(ObiSolver), typeof(ObiFixedUpdater));
-        ObiSolver solver = solverObject.GetComponent<ObiSolver>();
-        ObiFixedUpdater updater = solverObject.GetComponent<ObiFixedUpdater>();
-        updater.substeps = 30;
-
-        // add the solver to the updater:
-        updater.solvers.Add(solver);
-        
-        solver.gravity = Vector3.zero;
-
-        return solver;
-    }
-
     GameObject CreateChain()
     {
         // create a rope:
@@ -69,7 +55,9 @@ public class RopeCreator : MonoBehaviour
         {
             chainRenderer.linkPrefabs.Add(linkPrefab);
         }
-
+        
+        // TODO: Don't hardcode this
+        chainRenderer.linkScale = new Vector3(170, 170, 170);
         chainRenderer.sectionTwist = 90;
 
         return ropeObject;
@@ -82,6 +70,8 @@ public class RopeCreator : MonoBehaviour
 
         // get component reference:
         ObiRopeExtrudedRenderer ropeRenderer = ropeObject.GetComponent<ObiRopeExtrudedRenderer>();
+
+        ropeRenderer.thicknessScale = _thicknessScale;
 
         // load the default rope section:
         ropeRenderer.section = Resources.Load<ObiRopeSection>("DefaultRopeSection");
@@ -96,7 +86,7 @@ public class RopeCreator : MonoBehaviour
     {
         GameObject ropeObject;
 
-        if (isChain)
+        if (_isChain)
             ropeObject = CreateChain();
         else
             ropeObject = CreateRope();
@@ -105,20 +95,20 @@ public class RopeCreator : MonoBehaviour
         
         // create a blueprint 
         ObiRodBlueprint blueprint = ScriptableObject.CreateInstance<ObiRodBlueprint>();
-        blueprint.resolution = 0.5f;
+        blueprint.resolution = 0.1f;
+        blueprint.keepInitialShape = false;
 
         SetupBlueprint(blueprint);
         IEnumerator bpSetup = blueprint.Generate();
 
         while (bpSetup.MoveNext()) {}
         
+        
         // instantiate and set the blueprint:
         rope.rodBlueprint = ScriptableObject.Instantiate(blueprint);
-
-        ObiSolver solver = CreateSolver();
         
         // parent the cloth under a solver to start simulation:
-        rope.transform.parent = solver.transform;
+        rope.transform.parent = _solver.transform;
 
         int groupIndex = 0;
         for (int i = 0; i < table[0].Count; i += 3)
@@ -128,6 +118,14 @@ public class RopeCreator : MonoBehaviour
                 rope.blueprint.groups[groupIndex]);
             groupIndex += 1;
         }
+        
+        /*Vector3 position1 = new Vector3(table[0][0], table[0][2], table[0][1]);
+        AddAttachment(ropeObject, CreateEmptyGameObject( position1, name + " - Node " + 0),
+            rope.blueprint.groups[0]);
+        Vector3 position2 = new Vector3(table[0][table[0].Count-3], table[0][table[0].Count-1], table[0][table[0].Count-2]);
+        AddAttachment(ropeObject, CreateEmptyGameObject( position2, name + " - Node " + 1),
+            rope.blueprint.groups[(table[0].Count/3)-3]);*/
+        
     }
 
     Transform CreateEmptyGameObject(Vector3 position, string name)

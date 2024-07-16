@@ -2463,13 +2463,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
-  - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
+  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
+  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   csvFile: {fileID: 4900000, guid: f78165ed43a7f304a8ce0dbabb53f8de, type: 3}
   ropeMat: {fileID: 2100000, guid: b74081a5a5bbf418ea9f95bfec18f393, type: 2}
-  skipLines: 2
-  isChain: 1
+  _skipLines: 2
+  _isChain: 1
+  _thicknessScale: 0
 --- !u!4 &459194256
 Transform:
   m_ObjectHideFlags: 0
@@ -3407,6 +3409,164 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 0.036
   max_degree_rotation: 2
+--- !u!1 &748398417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748398420}
+  - component: {fileID: 748398419}
+  - component: {fileID: 748398418}
+  m_Layer: 0
+  m_Name: Obi Solver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &748398418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748398417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9704d540ac448439a425526f6b2986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solvers:
+  - {fileID: 748398419}
+  substeps: 15
+--- !u!114 &748398419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748398417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d174fab52f0c4b8399f25d5c3ea524c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulateWhenInvisible: 1
+  m_Backend: 1
+  parameters:
+    mode: 0
+    interpolation: 0
+    gravity: {x: 0, y: -9.81, z: 0}
+    damping: 0
+    maxAnisotropy: 3
+    sleepThreshold: 0.0005
+    collisionMargin: 0.02
+    maxDepenetration: 10
+    continuousCollisionDetection: 1
+    shockPropagation: 0
+    surfaceCollisionIterations: 8
+    surfaceCollisionTolerance: 0.005
+  gravity: {x: 0, y: 0, z: 0}
+  gravitySpace: 1
+  worldLinearInertiaScale: 0
+  worldAngularInertiaScale: 0
+  distanceConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  bendingConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  particleCollisionConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  particleFrictionConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  collisionConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  frictionConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  skinConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  volumeConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  shapeMatchingConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  tetherConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  pinConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  stitchConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  densityConstraintParameters:
+    evaluationOrder: 1
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  stretchShearConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  bendTwistConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 1
+  chainConstraintParameters:
+    evaluationOrder: 0
+    iterations: 1
+    SORFactor: 1
+    enabled: 0
+--- !u!4 &748398420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748398417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772211739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,6 +6656,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1392014904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392014905}
+  - component: {fileID: 1392014906}
+  m_Layer: 0
+  m_Name: Chain 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1392014905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392014904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1936739707}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1392014906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392014904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _solver: {fileID: 748398417}
+  linkPrefabs:
+  - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
+  - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
+  csvFile: {fileID: 4900000, guid: a00b13c8321b67742bfac7c79f9bc7f4, type: 3}
+  ropeMat: {fileID: 2100000, guid: b74081a5a5bbf418ea9f95bfec18f393, type: 2}
+  _skipLines: 2
+  _isChain: 0
+  _thicknessScale: 8
 --- !u!1001 &1401098370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9577,6 +9789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RopeCreators:
   - {fileID: 459194255}
+  - {fileID: 1392014906}
 --- !u!4 &1936739707
 Transform:
   m_ObjectHideFlags: 0
@@ -9589,6 +9802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459194256}
+  - {fileID: 1392014905}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
