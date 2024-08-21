@@ -5,10 +5,11 @@ using UnityEngine;
 public class RopeAnimator : MonoBehaviour
 {
     public List<RopeCreator> RopeCreators;
+    public float waitTime;
     
     private void Start()
     {
-        StartCoroutine(StartAnimation(0));
+        StartCoroutine(StartAnimation(waitTime));
     }
 
     private void AnimateRopes(RopeCreator rp)

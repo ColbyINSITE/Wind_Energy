@@ -96,7 +96,7 @@ public class RopeCreator : MonoBehaviour
         // create a blueprint 
         ObiRodBlueprint blueprint = ScriptableObject.CreateInstance<ObiRodBlueprint>();
         blueprint.resolution = 0.1f;
-        blueprint.keepInitialShape = false;
+        //blueprint.keepInitialShape = false;
 
         SetupBlueprint(blueprint);
         IEnumerator bpSetup = blueprint.Generate();

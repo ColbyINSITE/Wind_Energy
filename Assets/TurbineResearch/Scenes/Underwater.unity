@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 770.66864, g: 954.8337, b: 1263.774, a: 1}
+  m_IndirectSpecularColor: {r: 608.2804, g: 753.65515, b: 997.47046, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solvers:
   - {fileID: 748398419}
-  substeps: 15
+  substeps: 12
 --- !u!114 &748398419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8357,6 +8357,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 406761770623565914, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 457536134579858462, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_Name
       value: Ocean_notWorking
@@ -8404,6 +8408,10 @@ PrefabInstance:
     - target: {fileID: 3531881301250011057, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_Version
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607621598575453388, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: weight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4156915704988050822, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_IsActive
@@ -9013,13 +9021,33 @@ PrefabInstance:
       propertyPath: m_Version
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6932115266068841596, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6975919029654984451, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_Version
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7082110029540163023, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: weight
-      value: 0.75
+      value: 0.803
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082110029540163023, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082110029540163023, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: priority
+      value: 5.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082110029540163023, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: blendDistance
+      value: 110.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636149134225364160, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7655728301318099653, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
       propertyPath: m_Version
@@ -9790,6 +9818,7 @@ MonoBehaviour:
   RopeCreators:
   - {fileID: 459194255}
   - {fileID: 1392014906}
+  waitTime: 5
 --- !u!4 &1936739707
 Transform:
   m_ObjectHideFlags: 0
