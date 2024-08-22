@@ -6,6 +6,8 @@ public class RopeAnimator : MonoBehaviour
 {
     public List<RopeCreator> RopeCreators;
     public float waitTime;
+    public bool skipFirstColumn;
+    public float frameDuration;
     
     private void Start()
     {
@@ -17,13 +19,13 @@ public class RopeAnimator : MonoBehaviour
         for (int i = 0; i < rp.GetNodeCount(); i++)
         {
             Transform node = rp.transform.GetChild(i);
-            StartCoroutine(LoopNodes(rp, node, i));
+            StartCoroutine(LoopNodes(rp, node, i, rp.animationFrameLimit));
         }
     }
 
-    IEnumerator LoopNodes(RopeCreator rp, Transform node, int nodeIdx)
+    IEnumerator LoopNodes(RopeCreator rp, Transform node, int nodeIdx, int animationFrameLimit)
     {
-        for (int i = 1; i < 1200; i++)
+        for (int i = 1; i < animationFrameLimit; i++)
         {
             IEnumerator lerpNode = LerpNode(rp, node, nodeIdx, i);
             while (lerpNode.MoveNext())
@@ -35,14 +37,19 @@ public class RopeAnimator : MonoBehaviour
 
     IEnumerator LerpNode(RopeCreator rp, Transform node, int nodeIdx, int frame)
     {
+        int buffer = 0;
+        if (skipFirstColumn)
+        {
+            buffer = 1;
+        }
+        
         List<List<float>> table = rp.GetTable();
         Vector3 startPosition = node.position;
-        Vector3 endPosition = new Vector3(table[frame][3 * nodeIdx], table[frame][3 * nodeIdx + 2], table[frame][3 * nodeIdx + 1]);
+        Vector3 endPosition = new Vector3(table[frame][buffer + 3 * nodeIdx], table[frame][buffer + 3 * nodeIdx + 2], table[frame][buffer + 3 * nodeIdx + 1]);
         float timeStep = 0f;
-        float lerpDuration = 0.5f;
-        while (timeStep < lerpDuration)
+        while (timeStep < frameDuration)
         {
-            node.position = Vector3.Lerp(startPosition, endPosition, timeStep/lerpDuration);
+            node.position = Vector3.Lerp(startPosition, endPosition, timeStep/frameDuration);
             timeStep += Time.deltaTime;
             yield return null;
         }

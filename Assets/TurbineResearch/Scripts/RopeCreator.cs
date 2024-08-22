@@ -7,32 +7,41 @@ using UnityEngine;
 
 public class RopeCreator : MonoBehaviour
 {
-    private CSVReader csvReader;
+    private TextReader txtReader;
     private List<List<float>> table;
     private int nodeCount = 0;
 
     public GameObject _solver;
     public List<GameObject> linkPrefabs;
-    public TextAsset csvFile; 
+    public TextAsset file; 
     public Material ropeMat;
     public int _skipLines;
     public bool _isChain;
     public float _thicknessScale;
+    public bool skipFirstColumn;
+    public int animationFrameLimit;
     
     void Awake()
     {
-        csvReader = new CSVReader();
-        table = csvReader.ReadCSVFile(Application.dataPath + "\\TurbineResearch\\CSV Files\\" + csvFile.name +".csv", _skipLines);
+        txtReader = new TextReader();
+        table = txtReader.ReadCSVFile(
+            Application.dataPath + "\\Resources\\" + file.name + ".txt", _skipLines, ' ', animationFrameLimit);
         SetupRope(); 
     }
 
     void SetupBlueprint(ObiRodBlueprint blueprint)
     {
+        int buffer = 0;
+        if (skipFirstColumn)
+        {
+            buffer = 1;
+        }
+        
         // Procedurally generate the rope path (a simple straight line):
         int filter = ObiUtils.MakeFilter(ObiUtils.CollideWithEverything, 0);
         blueprint.path.Clear();
 
-        for (int i = 0; i < table[0].Count; i += 3)
+        for (int i = buffer; i < table[0].Count; i += 3)
         {
             nodeCount += 1;
             Vector3 position = new Vector3(table[0][i], table[0][i + 2], table[0][i + 1]);
@@ -103,15 +112,20 @@ public class RopeCreator : MonoBehaviour
 
         while (bpSetup.MoveNext()) {}
         
-        
         // instantiate and set the blueprint:
         rope.rodBlueprint = ScriptableObject.Instantiate(blueprint);
         
         // parent the cloth under a solver to start simulation:
         rope.transform.parent = _solver.transform;
-
+        
+        int buffer = 0;
+        if (skipFirstColumn)
+        {
+            buffer = 1;
+        }
+        
         int groupIndex = 0;
-        for (int i = 0; i < table[0].Count; i += 3)
+        for (int i = buffer; i < table[0].Count; i += 3)
         {
             Vector3 position = new Vector3(table[0][i], table[0][i + 2], table[0][i + 1]);
             AddAttachment(ropeObject, CreateEmptyGameObject( position, name + " - Node " + i/3), 
