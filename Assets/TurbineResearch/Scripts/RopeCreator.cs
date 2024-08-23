@@ -20,6 +20,9 @@ public class RopeCreator : MonoBehaviour
     public float _thicknessScale;
     public bool skipFirstColumn;
     public int animationFrameLimit;
+    public float dynamicAttachmentCompliance;
+
+    public GameObject turbine;
     
     void Awake()
     {
@@ -124,22 +127,27 @@ public class RopeCreator : MonoBehaviour
             buffer = 1;
         }
         
-        int groupIndex = 0;
+        int groupIndex = -1;
         for (int i = buffer; i < table[0].Count; i += 3)
         {
-            Vector3 position = new Vector3(table[0][i], table[0][i + 2], table[0][i + 1]);
-            AddAttachment(ropeObject, CreateEmptyGameObject( position, name + " - Node " + i/3), 
-                rope.blueprint.groups[groupIndex]);
             groupIndex += 1;
+            Vector3 position = new Vector3(table[0][i], table[0][i + 2], table[0][i + 1]);
+            AddStaticAttachment(ropeObject, CreateEmptyGameObject( position, name + " - Node " + i/3), 
+                rope.blueprint.groups[groupIndex]);
         }
-        
+
+        if (!_isChain)
+        {
+            AddDynamicAttachment(ropeObject, turbine.transform, rope.blueprint.groups[groupIndex]);
+        }
+
         /*Vector3 position1 = new Vector3(table[0][0], table[0][2], table[0][1]);
         AddAttachment(ropeObject, CreateEmptyGameObject( position1, name + " - Node " + 0),
             rope.blueprint.groups[0]);
         Vector3 position2 = new Vector3(table[0][table[0].Count-3], table[0][table[0].Count-1], table[0][table[0].Count-2]);
         AddAttachment(ropeObject, CreateEmptyGameObject( position2, name + " - Node " + 1),
             rope.blueprint.groups[(table[0].Count/3)-3]);*/
-        
+
     }
 
     Transform CreateEmptyGameObject(Vector3 position, string name)
@@ -150,11 +158,20 @@ public class RopeCreator : MonoBehaviour
         return go.transform;
     }
     
-    void AddAttachment(GameObject actor, Transform targetTransform, ObiParticleGroup particleGroup)
+    void AddStaticAttachment(GameObject actor, Transform targetTransform, ObiParticleGroup particleGroup)
     {
         var attachment = actor.AddComponent<ObiParticleAttachment>();
         attachment.target = targetTransform;
         attachment.particleGroup = particleGroup;
+    }
+    
+    void AddDynamicAttachment(GameObject actor, Transform targetTransform, ObiParticleGroup particleGroup)
+    {
+        var attachment = actor.AddComponent<ObiParticleAttachment>();
+        attachment.target = targetTransform;
+        attachment.particleGroup = particleGroup;
+        attachment.attachmentType = ObiParticleAttachment.AttachmentType.Dynamic;
+        attachment.compliance = dynamicAttachmentCompliance;
     }
 
     public int GetNodeCount()
