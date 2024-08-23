@@ -9,6 +9,10 @@ public class RotateNewTurbine : MonoBehaviour
 
     void Update()
     {
-        transform.RotateAround(objectToRotateAround.transform.position, new Vector3(0, 0.1f, 1), Time.deltaTime * rotationSpeed);
+        Vector3 forward = objectToRotateAround.transform.forward;
+        Vector3 up = objectToRotateAround.transform.up;
+        Vector3 right = objectToRotateAround.transform.right;
+        Vector3 axis = up * 0.1f + forward;
+        transform.RotateAround(objectToRotateAround.transform.position, axis, Time.deltaTime * rotationSpeed);
     }
 }
