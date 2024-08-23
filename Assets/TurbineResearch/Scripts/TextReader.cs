@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -34,7 +35,15 @@ namespace TurbineResearch.Scripts
                 table.Add(new List<float>());
                 foreach (string data in dataValues)
                 {
-                    table[loopCounter].Add(float.Parse(data));
+                    // Bad fix for data having "***************" instead of zeroes at certain places
+                    if (String.Equals(data, "***************"))
+                    {
+                        table[loopCounter].Add(0);
+                    }
+                    else
+                    {
+                        table[loopCounter].Add(float.Parse(data));
+                    }
                 }
 
                 loopCounter += 1;
