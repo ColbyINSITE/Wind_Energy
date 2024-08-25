@@ -21345,7 +21345,7 @@ Shader "Crest/Ocean"
                 // We will always overwrite vt feeback with the nearest. So behind transparent surfaces vt will not be resolved
                 // This is a limitation of the current MRT approach.
         #if defined(KEYWORD_PERMUTATION_0) || defined(KEYWORD_PERMUTATION_1) || defined(KEYWORD_PERMUTATION_2) || defined(KEYWORD_PERMUTATION_3) || defined(KEYWORD_PERMUTATION_4) || defined(KEYWORD_PERMUTATION_5) || defined(KEYWORD_PERMUTATION_6) || defined(KEYWORD_PERMUTATION_7)
-        builtinData.vtPackedFeedback = surfaceDescription.VTPackedFeedback;
+        // builtinData.vtPackedFeedback = surfaceDescription.VTPackedFeedback;
         #endif
 
 
@@ -21415,6 +21415,9 @@ Shader "Crest/Ocean"
         #pragma only_renderers d3d11 playstation xboxone xboxseries vulkan metal switch
         #pragma multi_compile_instancing
         #pragma instancing_options renderinglayer
+        #pragma multi_compile _ DOTS_INSTANCING_ON
+        #pragma instancing_options renderinglayer
+        #pragma multi_compile_fragment AREA_SHADOW_MEDIUM AREA_SHADOW_HIGH
 
             // Keywords
             #pragma shader_feature_local _ _ALPHATEST_ON
@@ -23923,7 +23926,7 @@ Shader "Crest/Ocean"
                 // We will always overwrite vt feeback with the nearest. So behind transparent surfaces vt will not be resolved
                 // This is a limitation of the current MRT approach.
         #if defined(KEYWORD_PERMUTATION_0) || defined(KEYWORD_PERMUTATION_1) || defined(KEYWORD_PERMUTATION_2) || defined(KEYWORD_PERMUTATION_3) || defined(KEYWORD_PERMUTATION_4) || defined(KEYWORD_PERMUTATION_5) || defined(KEYWORD_PERMUTATION_6) || defined(KEYWORD_PERMUTATION_7)
-        builtinData.vtPackedFeedback = surfaceDescription.VTPackedFeedback;
+        // builtinData.vtPackedFeedback = surfaceDescription.VTPackedFeedback;
         #endif
 
 
