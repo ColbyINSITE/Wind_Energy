@@ -21,6 +21,7 @@ public class RopeCreator : MonoBehaviour
     public bool skipFirstColumn;
     public int animationFrameLimit;
     public float dynamicAttachmentCompliance;
+    public bool connectToTurbine;
 
     public GameObject turbine;
     
@@ -136,7 +137,7 @@ public class RopeCreator : MonoBehaviour
                 rope.blueprint.groups[groupIndex]);
         }
 
-        if (!_isChain)
+        if (connectToTurbine)
         {
             AddDynamicAttachment(ropeObject, turbine.transform, rope.blueprint.groups[groupIndex]);
         }
