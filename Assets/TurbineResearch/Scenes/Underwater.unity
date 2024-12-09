@@ -2629,12 +2629,18 @@ MonoBehaviour:
     m_Center: {x: 5000, y: 0, z: 5000}
     m_Extent: {x: 5000, y: 0, z: 5000}
   GeneratedTerrainfolder: Assets/Generated GIS Terrains/2022-06-16 15-11-51
+  availableHeights: 2000000040000000810000000001000000020000000400000008000000100000
+  availableHeightsResolutionPrePec: 04000000080000001000000020000000
   m_PixelErro: 0
   m_BaseMapDistance: 1000
   m_DetailDistance: 100
   m_DetailDensity: 100
   m_TreeDistance: 4000
   m_BillBoardStartDistance: 500
+  m_FadeLength: 10
+  m_DetailResolution_index: 5
+  m_ResolutionPerPatch_index: 1
+  m_BaseMapResolution_index: 5
 --- !u!1 &428143692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,7 +3037,7 @@ MonoBehaviour:
   linkPrefabs:
   - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
   - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
-  file: {fileID: 4900000, guid: 00c6dab73fd570140868542db52e68aa, type: 3}
+  file: {fileID: 4900000, guid: 3f48ac761be9ac840b8e4777fcce79b9, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   _skipLines: 2
   _isChain: 0
@@ -3658,7 +3664,7 @@ MonoBehaviour:
   linkPrefabs:
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  file: {fileID: 4900000, guid: bfa0cea0a1a1faa459b2010402b9ad9e, type: 3}
+  file: {fileID: 4900000, guid: 3c744b57b1ae0a84a9b3b15033955dc9, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   _skipLines: 2
   _isChain: 1
@@ -5893,7 +5899,7 @@ MonoBehaviour:
   linkPrefabs:
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  file: {fileID: 4900000, guid: 35542f6478c8d4648838263202ff590c, type: 3}
+  file: {fileID: 4900000, guid: b06940d0878793043bc22373deee69b2, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   _skipLines: 2
   _isChain: 1
@@ -6756,7 +6762,7 @@ MonoBehaviour:
   linkPrefabs:
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  file: {fileID: 4900000, guid: aae329af6005e214888d45240b8ea819, type: 3}
+  file: {fileID: 4900000, guid: 8351bbc4bed98e845bde4744fba2558d, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   _skipLines: 2
   _isChain: 1
@@ -7359,7 +7365,7 @@ MonoBehaviour:
   linkPrefabs:
   - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
   - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
-  file: {fileID: 4900000, guid: 22fcaec6f0e36014cbac8a7407b9f50f, type: 3}
+  file: {fileID: 4900000, guid: a7c37d116631694468430bb530531b77, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   _skipLines: 2
   _isChain: 0
@@ -9145,7 +9151,7 @@ MonoBehaviour:
   linkPrefabs:
   - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
   - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
-  file: {fileID: 4900000, guid: f3216880b52abad4f89643d0c71b980d, type: 3}
+  file: {fileID: 4900000, guid: 16fd0d105e274f340b232d3c91514304, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   _skipLines: 2
   _isChain: 0
@@ -9875,6 +9881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609232142}
   - component: {fileID: 1609232141}
+  - component: {fileID: 1609232143}
   m_Layer: 0
   m_Name: RopeManager - Storm
   m_TagString: Untagged
@@ -9903,7 +9910,7 @@ MonoBehaviour:
   - {fileID: 585558277}
   waitTime: 2
   skipFirstColumn: 1
-  frameDuration: 0.0025
+  frameDuration: 0.025
 --- !u!4 &1609232142
 Transform:
   m_ObjectHideFlags: 0
@@ -9925,6 +9932,18 @@ Transform:
   - {fileID: 585558278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1609232143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609232140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f5dc37f09900d4bb2ad2417e701e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1629878016
 GameObject:
   m_ObjectHideFlags: 0
