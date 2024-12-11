@@ -2045,6 +2045,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0
   turbine: {fileID: 132395422}
 --- !u!1 &254811552
 GameObject:
@@ -2819,6 +2820,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0
   turbine: {fileID: 132395422}
 --- !u!4 &459194256
 Transform:
@@ -2953,16 +2955,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
   file: {fileID: 4900000, guid: 430a8169099c2bb4fa7505f4781b735e, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   skipLines: 2
   isChain: 0
-  thicknessScale: 6
+  thicknessScale: 0.1776
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0.1
   turbine: {fileID: 132395422}
 --- !u!4 &585558278
 Transform:
@@ -3010,111 +3013,6 @@ Transform:
   m_Children:
   - {fileID: 1700833695}
   m_Father: {fileID: 1648431141}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &627534657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 627534662}
-  - component: {fileID: 627534661}
-  - component: {fileID: 627534660}
-  - component: {fileID: 627534659}
-  m_Layer: 0
-  m_Name: Pin 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &627534659
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627534657}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &627534660
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627534657}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &627534661
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627534657}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &627534662
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627534657}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 193.876, y: -327.264, z: 335.3085}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628900691
 GameObject:
@@ -3172,6 +3070,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0
   turbine: {fileID: 132395422}
 --- !u!1 &631152770
 GameObject:
@@ -3580,8 +3479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
   file: {fileID: 4900000, guid: 0bf1f81fde00ac24c8a2016599ab37e5, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   skipLines: 2
@@ -3590,6 +3489,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0.5
   turbine: {fileID: 132395422}
 --- !u!4 &690795388
 Transform:
@@ -5050,6 +4950,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0
   turbine: {fileID: 132395422}
 --- !u!1001 &955522568
 PrefabInstance:
@@ -5521,111 +5422,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994418767}
   m_Mesh: {fileID: -6988940346990307137, guid: 8d65ed3084ac970418e44d393eea0c26, type: 3}
---- !u!1 &996869670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 996869674}
-  - component: {fileID: 996869673}
-  - component: {fileID: 996869672}
-  - component: {fileID: 996869671}
-  m_Layer: 0
-  m_Name: Pin 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &996869671
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996869670}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &996869672
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996869670}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &996869673
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996869670}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &996869674
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996869670}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: -400, z: 692.82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041474601
 GameObject:
   m_ObjectHideFlags: 0
@@ -5815,8 +5611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
   file: {fileID: 4900000, guid: 542f5517f0acdf8419e676835c3cb658, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   skipLines: 2
@@ -5825,6 +5621,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0.5
   turbine: {fileID: 132395422}
 --- !u!4 &1054356527
 Transform:
@@ -6678,8 +6475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
   file: {fileID: 4900000, guid: 779139472204bbd40878fc73756cf9bf, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   skipLines: 2
@@ -6688,6 +6485,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0.5
   turbine: {fileID: 132395422}
 --- !u!4 &1133638515
 Transform:
@@ -6831,6 +6629,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0
   turbine: {fileID: 132395422}
 --- !u!1001 &1186466481
 PrefabInstance:
@@ -7281,16 +7080,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
   file: {fileID: 4900000, guid: c95aaf45b0dc9734e9f6ee35fbb9ed64, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   skipLines: 2
   isChain: 0
-  thicknessScale: 6
+  thicknessScale: 0.1776
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0.1
   turbine: {fileID: 132395422}
 --- !u!4 &1259071381
 Transform:
@@ -8225,6 +8025,7 @@ MonoBehaviour:
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0
   turbine: {fileID: 132395422}
 --- !u!1001 &1401098370
 PrefabInstance:
@@ -9067,16 +8868,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
-  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
+  - {fileID: 6548518894719361365, guid: cc998d51b3ec7db4e8142851f02246a8, type: 3}
   file: {fileID: 4900000, guid: 4f7960bca4dc2864d945be6b78ef056d, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
   skipLines: 2
   isChain: 0
-  thicknessScale: 6
+  thicknessScale: 0.1776
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
+  blueprintResolution: 0.1
   turbine: {fileID: 132395422}
 --- !u!4 &1445633232
 Transform:
@@ -12720,8 +12522,6 @@ SceneRoots:
   - {fileID: 2088936620}
   - {fileID: 1869673126}
   - {fileID: 298701945}
-  - {fileID: 996869674}
-  - {fileID: 627534662}
   - {fileID: 1936739707}
   - {fileID: 1609232142}
   - {fileID: 748398420}
