@@ -22,7 +22,8 @@ public class RopeCreator : MonoBehaviour
     public bool skipFirstColumn;
     public int animationFrameLimit;
     public float dynamicAttachmentCompliance;
-
+    public float blueprintResolution;
+    
     private List<GameObject> _nodes;
     public GameObject turbine;
     
@@ -103,7 +104,7 @@ public class RopeCreator : MonoBehaviour
         
         // create a blueprint 
         ObiRodBlueprint blueprint = ScriptableObject.CreateInstance<ObiRodBlueprint>();
-        blueprint.resolution = 0.1f;
+        blueprint.resolution = blueprintResolution;
         //blueprint.keepInitialShape = false;
 
         SetupBlueprint(blueprint);

@@ -2033,15 +2033,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 0}
   linkPrefabs:
   - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
   - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
   file: {fileID: 4900000, guid: cc6ab507c1d103341897934f480117ca, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 0
-  _thicknessScale: 4
+  skipLines: 0
+  isChain: 0
+  thicknessScale: 0
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -2568,79 +2568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d51ac78ff4d37468130f731195f0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastTab: 0
-  data:
-    AlreadyLoaded: 0
-    MaxElevation: 1
-    MinElevation: 0
-    mapSize_row_y: 2279
-    mapSize_col_x: 2560
-    Tiles: {x: 0, y: 0}
-    DownLeftPoint:
-      x: 0
-      y: 0
-      z: 0
-    TopRightPoint:
-      x: 0
-      y: 0
-      z: 0
-    TopLeftPoint:
-      x: 0
-      y: 0
-      z: 0
-    DownRightPoint:
-      x: 0
-      y: 0
-      z: 0
-    dim:
-      x: 0
-      y: 0
-      z: 0
-    cellsize: 0
-    Terrain_Dimension:
-      x: 0
-      y: 0
-      z: 0
-    TerrainMaxMinElevation: {x: 0, y: 0}
-  datas: []
-  TopLeftLatLong:
-    x: 0
-    y: 0
-    z: 0
-  DownRightLatLong:
-    x: 0
-    y: 0
-    z: 0
-  scale: {x: 1, y: 1, z: 1}
-  ContainerSize: {x: 10000, y: 162, z: 10000}
-  SubTerrainSize: {x: 10000, y: 162, z: 10000}
-  terrainCount: {x: 1, y: 1}
-  Dimensions: {x: 10, y: 10}
-  MinMaxElevation: {x: 0, y: 1}
-  TLPointMercator:
-    x: 0.5
-    y: 0.5
-    z: 0
-  DRPointMercator:
-    x: 0.5
-    y: 0.5
-    z: 0
-  GlobalTerrainBounds:
-    m_Center: {x: 5000, y: 0, z: 5000}
-    m_Extent: {x: 5000, y: 0, z: 5000}
-  GeneratedTerrainfolder: Assets/Generated GIS Terrains/2022-06-16 15-11-51
-  availableHeights: 2000000040000000810000000001000000020000000400000008000000100000
-  availableHeightsResolutionPrePec: 04000000080000001000000020000000
-  m_PixelErro: 0
-  m_BaseMapDistance: 1000
-  m_DetailDistance: 100
-  m_DetailDensity: 100
-  m_TreeDistance: 4000
-  m_BillBoardStartDistance: 500
-  m_FadeLength: 10
-  m_DetailResolution_index: 5
-  m_ResolutionPerPatch_index: 1
-  m_BaseMapResolution_index: 5
 --- !u!1 &428143692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,15 +2719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f0656e9846b1449b917997e6da4e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElevationFilePath: C:\GitRepos\Turbines\Assets/TurbineResearch/matinicus.png
-  prefs: {fileID: 0}
-  container: {fileID: 355723831}
-  size: {x: 10000, y: 162, z: 10000}
-  Number: {x: 0, y: 0}
-  terrain: {fileID: 446042112}
-  terrainData: {fileID: 15600000, guid: 51ce26befe1203745a0eb532b057ca60, type: 2}
-  ElevationState: 0
-  TextureState: 0
 --- !u!154 &446042111
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -2889,15 +2807,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 0}
   linkPrefabs:
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   file: {fileID: 4900000, guid: a1effcebfb9634242b2bb6752a42ff6d, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 1
-  _thicknessScale: 0
+  skipLines: 0
+  isChain: 0
+  thicknessScale: 0
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -3033,15 +2951,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
-  - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
-  file: {fileID: 4900000, guid: 3f48ac761be9ac840b8e4777fcce79b9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  file: {fileID: 4900000, guid: 430a8169099c2bb4fa7505f4781b735e, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 0
-  _thicknessScale: 4
+  skipLines: 2
+  isChain: 0
+  thicknessScale: 6
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -3242,15 +3160,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 0}
   linkPrefabs:
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   file: {fileID: 4900000, guid: d1998f1291f9cb049b349cbe537c8142, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 1
-  _thicknessScale: 0
+  skipLines: 0
+  isChain: 0
+  thicknessScale: 0
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -3660,15 +3578,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  file: {fileID: 4900000, guid: 3c744b57b1ae0a84a9b3b15033955dc9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  file: {fileID: 4900000, guid: 0bf1f81fde00ac24c8a2016599ab37e5, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 1
-  _thicknessScale: 0
+  skipLines: 2
+  isChain: 1
+  thicknessScale: 6
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -5120,15 +5038,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 0}
   linkPrefabs:
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
   file: {fileID: 4900000, guid: 0963ce5f6320328488244bb7bddc2089, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 1
-  _thicknessScale: 0
+  skipLines: 0
+  isChain: 0
+  thicknessScale: 0
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -5895,15 +5813,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  file: {fileID: 4900000, guid: b06940d0878793043bc22373deee69b2, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  file: {fileID: 4900000, guid: 542f5517f0acdf8419e676835c3cb658, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 1
-  _thicknessScale: 0
+  skipLines: 2
+  isChain: 1
+  thicknessScale: 6
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -6758,15 +6676,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  - {fileID: 5456590789668210655, guid: 2157b3a487e406a4da875d607aa98158, type: 3}
-  file: {fileID: 4900000, guid: 8351bbc4bed98e845bde4744fba2558d, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  file: {fileID: 4900000, guid: 779139472204bbd40878fc73756cf9bf, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 1
-  _thicknessScale: 0
+  skipLines: 2
+  isChain: 1
+  thicknessScale: 6
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -6901,15 +6819,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 0}
   linkPrefabs:
   - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
   - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
   file: {fileID: 4900000, guid: e78f7e40f1485c24d9fa66b23d28cc1d, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 0
-  _thicknessScale: 4
+  skipLines: 0
+  isChain: 0
+  thicknessScale: 0
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -7361,15 +7279,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
-  - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
-  file: {fileID: 4900000, guid: a7c37d116631694468430bb530531b77, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  file: {fileID: 4900000, guid: c95aaf45b0dc9734e9f6ee35fbb9ed64, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 0
-  _thicknessScale: 4
+  skipLines: 2
+  isChain: 0
+  thicknessScale: 6
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -8295,15 +8213,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 0}
   linkPrefabs:
   - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
   - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
   file: {fileID: 4900000, guid: da19eb3ce9329b349a882fee4b811702, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 0
-  _thicknessScale: 4
+  skipLines: 0
+  isChain: 0
+  thicknessScale: 0
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -9147,15 +9065,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614c6df6719aea499de9fdb2146f1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _solver: {fileID: 748398417}
+  solver: {fileID: 748398417}
   linkPrefabs:
-  - {fileID: 116810, guid: 2d2a7dadfeecb4ffc9bdbfa8ae0b4727, type: 3}
-  - {fileID: 116810, guid: 1a25eaebcccc14ffeabd9b15641f8b51, type: 3}
-  file: {fileID: 4900000, guid: 16fd0d105e274f340b232d3c91514304, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  - {fileID: 2024245439996196949, guid: 981eca65ad5def7458c9747712cbf3c9, type: 3}
+  file: {fileID: 4900000, guid: 4f7960bca4dc2864d945be6b78ef056d, type: 3}
   ropeMat: {fileID: 2100000, guid: edf4fbb0c32c4244d8e60fe4d7bc67b6, type: 2}
-  _skipLines: 2
-  _isChain: 0
-  _thicknessScale: 4
+  skipLines: 2
+  isChain: 0
+  thicknessScale: 6
   skipFirstColumn: 1
   animationFrameLimit: 5000
   dynamicAttachmentCompliance: 0.008
@@ -9882,6 +9800,8 @@ GameObject:
   - component: {fileID: 1609232142}
   - component: {fileID: 1609232141}
   - component: {fileID: 1609232143}
+  - component: {fileID: 1609232145}
+  - component: {fileID: 1609232144}
   m_Layer: 0
   m_Name: RopeManager - Storm
   m_TagString: Untagged
@@ -9944,6 +9864,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f5dc37f09900d4bb2ad2417e701e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connectorPart: {fileID: 8711328656597364712, guid: e03a73bdeae03b342a9055577a7a844f, type: 3}
+  rope: {fileID: 1445633230}
+  chain: {fileID: 690795386}
+--- !u!114 &1609232144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609232140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f5dc37f09900d4bb2ad2417e701e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectorPart: {fileID: 8711328656597364712, guid: e03a73bdeae03b342a9055577a7a844f, type: 3}
+  rope: {fileID: 585558276}
+  chain: {fileID: 1054356525}
+--- !u!114 &1609232145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609232140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f5dc37f09900d4bb2ad2417e701e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectorPart: {fileID: 8711328656597364712, guid: e03a73bdeae03b342a9055577a7a844f, type: 3}
+  rope: {fileID: 1259071379}
+  chain: {fileID: 1133638513}
 --- !u!1 &1629878016
 GameObject:
   m_ObjectHideFlags: 0

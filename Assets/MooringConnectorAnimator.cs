@@ -39,7 +39,7 @@ public class MooringConnectorAnimator : MonoBehaviour
 
     void SetConnectorRotation()
     {
-        connectorPart.transform.forward = _chainNode.transform.position - _ropeNode.transform.position;
+        connectorPart.transform.up = _chainNode.transform.position - _ropeNode.transform.position;
         // I do this because the rotations on the prefab are messy. The fbx file rotates the object by (-90, 0, 30) and
         // that aligns the forward direction with z axis. So we do the same rotation after finding the forward
         // direction. We need to scrap this if we fix the import of the connector
