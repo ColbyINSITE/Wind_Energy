@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6675689852694741184
+--- !u!1001 &8369291830560789177
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1f356e7b89b52994a966836d80cd64c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -67.583626
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f356e7b89b52994a966836d80cd64c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.895
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f356e7b89b52994a966836d80cd64c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -157.43541
+      value: -12.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f356e7b89b52994a966836d80cd64c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1f356e7b89b52994a966836d80cd64c6, type: 3}
       propertyPath: m_Name
-      value: WindfarmConnector Variant
+      value: WindfarmConnector (1) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

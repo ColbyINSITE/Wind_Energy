@@ -23,10 +23,12 @@ public class RopeCreator : MonoBehaviour
     public int animationFrameLimit;
     public float dynamicAttachmentCompliance;
 
+    private List<GameObject> _nodes;
     public GameObject turbine;
     
     void Awake()
     {
+        _nodes = new List<GameObject>();
         _txtReader = new TextReader();
         Table = _txtReader.ReadCSVFile(
             Application.dataPath + "\\Resources\\" + file.name + ".txt", skipLines, ' ', animationFrameLimit);
@@ -112,7 +114,7 @@ public class RopeCreator : MonoBehaviour
         // instantiate and set the blueprint:
         rope.rodBlueprint = Instantiate(blueprint);
         
-        // parent the cloth under a solver to start simulation:
+        // parent the rope under a solver to start simulation:
         rope.transform.parent = solver.transform;
         
         int buffer = skipFirstColumn ? 1 : 0;
@@ -122,7 +124,7 @@ public class RopeCreator : MonoBehaviour
         {
             groupIndex += 1;
             Vector3 position = new Vector3(Table[0][i], Table[0][i + 2], Table[0][i + 1]);
-            AddStaticAttachment(ropeObject, CreateEmptyGameObject( position, name + " - Node " + i/3), 
+            AddStaticAttachment(ropeObject, CreateNode( position, name + " - Node " + i/3), 
                 rope.blueprint.groups[groupIndex]);
         }
 
@@ -139,11 +141,12 @@ public class RopeCreator : MonoBehaviour
 
     }
 
-    Transform CreateEmptyGameObject(Vector3 position, string name)
+    Transform CreateNode(Vector3 position, string name)
     {
         GameObject go = new GameObject(name);
         go.transform.position = position;
         go.transform.parent = transform;
+        _nodes.Add(go);
         return go.transform;
     }
     
@@ -171,5 +174,10 @@ public class RopeCreator : MonoBehaviour
     public List<List<float>> GetTable()
     {
         return Table;
+    }
+
+    public GameObject GetNode(int i)
+    {
+        return _nodes[i];
     }
 }

@@ -5,35 +5,47 @@ using UnityEngine;
 
 public class MooringConnectorAnimator : MonoBehaviour
 {
-    public List<GameObject> ropes;
-    public List<GameObject> chains;
-    private RopeCreator rc;
+    public GameObject connectorPart;
+    public GameObject rope;
+    public GameObject chain;
+    private RopeCreator _ropeRc;
+    private RopeCreator _chainRc;
+    private GameObject _ropeNode;
+    private GameObject _chainNode;
     
     // Start is called before the first frame update
     void Start()
     {
-        rc = GetComponent<RopeCreator>();
-        
-        if (ropes.Count != chains.Count)
+        if (rope == null || chain == null)
         {
-            throw new Exception("Size of rope and chain lists don't match!");
+            throw new Exception("You need a rope and a chain for this!");
         }
 
-        for (int i = 0; i < ropes.Count; i++)
-        {
-            Vector3 direction = FindConnectorDirection(ropes[i], chains[i]);
-        }
+        connectorPart = Instantiate(connectorPart);
+
+        _ropeRc = rope.GetComponent<RopeCreator>();
+        _chainRc = chain.GetComponent<RopeCreator>();
         
+        // get the first node on the rope and the last node on the chain to create the connection
+        _ropeNode = _ropeRc.GetNode(1);
+        _chainNode = _chainRc.GetNode(_chainRc.GetNodeCount() - 2);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        SetConnectorPosition();
+        SetConnectorRotation();
     }
 
-    Vector3 FindConnectorDirection(GameObject rope, GameObject chain)
+    void SetConnectorRotation()
     {
-        
+        connectorPart.transform.forward = _chainNode.transform.position - _ropeNode.transform.position;
+        connectorPart.transform.rotation *= Quaternion.Euler(-90, 0, -30);
     }
+    
+    void SetConnectorPosition()
+    {
+        connectorPart.transform.position = _ropeRc.GetNode(0).transform.position;
+    }
+    
 }
