@@ -17,6 +17,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering.HighDefinition;
 #endif
 using System.Collections.Generic;
+using LightLayerEnum = UnityEngine.Rendering.HighDefinition.LightLayerEnum;
 
 #if !UNITY_2020_3_OR_NEWER
 #error This version of Crest requires Unity 2020.3 or later.
@@ -1431,13 +1432,6 @@ namespace Crest
 
 #pragma warning disable 0618
             // UnderwaterEffect
-#if CREST_URP
-            var underwaters = FindObjectsOfType<UnderwaterEffect>();
-            foreach (var underwater in underwaters)
-            {
-                underwater.Validate(ocean, ValidatedHelper.DebugLog);
-            }
-#endif
 #pragma warning restore 0618
 
             // OceanDepthCache

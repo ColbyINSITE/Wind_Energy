@@ -17,7 +17,7 @@ MonoBehaviour:
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
       data1: 72198262773251917
-      data2: 13763000511710035992
+      data2: 13763000511710068760
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -65,7 +65,8 @@ MonoBehaviour:
   beforePostProcessCustomPostProcesses: []
   afterPostProcessBlursCustomPostProcesses: []
   afterPostProcessCustomPostProcesses: []
-  beforeTAACustomPostProcesses: []
+  beforeTAACustomPostProcesses:
+  - Crest.UnderwaterPostProcessHDRP, Crest, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   lightLayerName0: Light Layer default
   lightLayerName1: Light Layer 1
   lightLayerName2: Light Layer 2
