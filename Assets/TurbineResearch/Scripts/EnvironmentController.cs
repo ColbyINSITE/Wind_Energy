@@ -22,11 +22,6 @@ public class EnvironmentController : MonoBehaviour
             currentEnvironment.SetActive(true);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
     
     public void ActivateEnvironment(int index)
     {

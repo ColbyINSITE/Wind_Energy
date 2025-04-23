@@ -5,13 +5,17 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour, ActionMap.IPlayerActions
+public class GameManager : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IUIActions
 {
+    
     public GameObject menuCanvas;
+    public Transform XRRigPlayer;
     public Transform MainCamera;
     public Transform RightController;
     public Transform LeftController;
     public ActionMap controls;
+    public TeleportLocations teleportLocations;
+    private int currentLocationIndex = 0;
     
     // Update is called once per frame
     void Update()
@@ -27,8 +31,7 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions
         {
             controls = new ActionMap();
             controls.Player.SetCallbacks(this);
-            controls.UIbuttons.SetCallbacks(this);
-            controls.Teleportation.SetCallbacks(this);
+            controls.UI.SetCallbacks(this);
         }
         //controls.Player.Enable();
     }
@@ -37,7 +40,7 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions
     {
         if (context.performed)
         {
-            controls.UIbuttons.Enable();
+            controls.UI.Enable();
             controls.Player.Disable();
 
             RectTransform rectTransform = menuCanvas.GetComponent<RectTransform>();
@@ -48,7 +51,7 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions
         }
     }
     
-    public void OnExitUI(InputAction.CallbackContext context)
+    public void OnCloseUI(InputAction.CallbackContext context)
     {
         if(context.performed)
             ExitUIState();
@@ -66,8 +69,39 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions
 
     private void ExitUIState()
     {
-        controls.UIbuttons.Disable();
+        controls.UI.Disable();
         controls.Player.Enable();
         SetUIMenuComponents(false);
+    }
+    
+    public void EnableNextLocation()
+    {
+        if (teleportLocations != null && teleportLocations.locations.Count > 0)
+        {
+            currentLocationIndex = (currentLocationIndex + 1) % teleportLocations.locations.Count;
+            TeleportToCurrentLocation();
+        }
+    }
+    
+    public void EnablePreviousLocation()
+    {
+        if (teleportLocations != null && teleportLocations.locations.Count > 0)
+        {
+            currentLocationIndex--;
+            if (currentLocationIndex < 0)
+                currentLocationIndex = teleportLocations.locations.Count - 1;
+            TeleportToCurrentLocation();
+        }
+    }
+    
+    private void TeleportToCurrentLocation()
+    {
+        if (XRRigPlayer != null && teleportLocations != null && 
+            currentLocationIndex >= 0 && currentLocationIndex < teleportLocations.locations.Count)
+        {
+            XRRigPlayer.position = teleportLocations.locations[currentLocationIndex].transform.position;
+            XRRigPlayer.rotation = teleportLocations.locations[currentLocationIndex].transform.rotation;
+            ExitUIState();
+        }
     }
 }

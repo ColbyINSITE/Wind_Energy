@@ -1,8 +1,8 @@
 {
-    "name": "PlayerActions",
+    "name": "ActionMap",
     "maps": [
         {
-            "name": "DefaultPlayer",
+            "name": "Player",
             "id": "bb2a4332-c02e-4607-981d-dc26014170cc",
             "actions": [
                 {
