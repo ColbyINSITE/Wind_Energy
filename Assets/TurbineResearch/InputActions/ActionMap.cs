@@ -48,6 +48,17 @@ public partial class @ActionMap: IInputActionCollection2, IDisposable
                     ""action"": ""OpenUI"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e17d5b8-3875-4d9d-96a4-4cf7b0e028c0"",
+                    ""path"": ""<XRController>/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -70,6 +81,17 @@ public partial class @ActionMap: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""7d1c4cb7-1a6a-41f0-a9f0-84c0133dbbc8"",
                     ""path"": ""<XRController>/menuButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4bcf0cf4-9717-4628-82e0-b092b74fecdb"",
+                    ""path"": ""<XRController>/primaryButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

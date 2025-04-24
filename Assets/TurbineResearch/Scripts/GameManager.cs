@@ -18,12 +18,13 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IU
     private int currentLocationIndex = 0;
     
     // Update is called once per frame
-    void Update()
+    
+    /*void Update()
     {
          if (Input.GetKeyDown(KeyCode.Escape)){
             Application.Quit();
         }
-    }
+    }*/
     
     public void OnEnable()
     {
