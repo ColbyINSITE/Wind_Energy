@@ -1,49 +1,39 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class WeatherRopeManagerPair
-{
-    public GameObject weather;
-    public GameObject ropeManager;
-}
-
 public class EnvironmentController : MonoBehaviour
 {
-    [SerializeField] private List<WeatherRopeManagerPair> environments;
-    private WeatherRopeManagerPair currentEnvironment;
+    [SerializeField] private List<GameObject> weatherEnvironments;
+    private GameObject currentEnvironment;
     // Start is called before the first frame update
     void Start()
     {
-        if (environments != null)
+        if (weatherEnvironments != null && weatherEnvironments.Count > 0)
         {
             // Deactivate all environments initially
-            foreach (var pair in environments)
+            foreach (GameObject environment in weatherEnvironments)
             {
-                pair.weather.SetActive(false);
-                pair.ropeManager.SetActive(false);
+                environment.SetActive(false);
             }
             
-            // Activate the normal weather by default
-            currentEnvironment = environments[0];
-            currentEnvironment.weather.SetActive(true);
-            currentEnvironment.ropeManager.SetActive(true);
+            // Activate the first environment by default
+            currentEnvironment = weatherEnvironments[0];
+            currentEnvironment.SetActive(true);
         }
     }
     
     public void ActivateEnvironment(int index)
     {
-        if (environments != null && index >= 0 && index < environments.Count)
+        if (index >= 0 && index < weatherEnvironments.Count)
         {
             if (currentEnvironment != null)
             {
-                currentEnvironment.weather.SetActive(false);
-                currentEnvironment.ropeManager.SetActive(false);
+                currentEnvironment.SetActive(false);
             }
             
-            currentEnvironment = environments[index];
-            currentEnvironment.weather.SetActive(true);
-            currentEnvironment.ropeManager.SetActive(true);
+            currentEnvironment = weatherEnvironments[index];
+            currentEnvironment.SetActive(true);
 
             if (index == 1)
             {
