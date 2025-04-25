@@ -13417,11 +13417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e232a98d28ae44b83cbdaf1b894b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environments:
-  - weather: {fileID: 256222101}
-    ropeManager: {fileID: 1936739705}
-  - weather: {fileID: 247201485}
-    ropeManager: {fileID: 1609232140}
+  weatherEnvironments:
+  - {fileID: 256222101}
+  - {fileID: 247201485}
 --- !u!1 &1648431143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 457536134579858462, guid: ddf71bfb72c45407fb8cea42d3aaeac4, type: 3}
