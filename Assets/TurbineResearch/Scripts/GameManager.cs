@@ -15,16 +15,27 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IU
     public Transform LeftController;
     public ActionMap controls;
     public TeleportLocations teleportLocations;
-    private int currentLocationIndex = 0;
-    
-    // Update is called once per frame
-    
-    /*void Update()
+    public int currentLocationIndex = 0;
+
+    public Transform Boat;
+    private static GameManager _instance;
+
+    public static GameManager Instance
     {
-         if (Input.GetKeyDown(KeyCode.Escape)){
-            Application.Quit();
+        get { return _instance; }
+    }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
         }
-    }*/
+        else
+        {
+            _instance = this;
+        }
+    }
     
     public void OnEnable()
     {
@@ -34,7 +45,7 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IU
             controls.Player.SetCallbacks(this);
             controls.UI.SetCallbacks(this);
         }
-        //controls.Player.Enable();
+        controls.Player.Enable();
     }
     
     public void OnOpenUI(InputAction.CallbackContext context)
@@ -95,7 +106,7 @@ public class GameManager : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IU
         }
     }
     
-    private void TeleportToCurrentLocation()
+    public void TeleportToCurrentLocation()
     {
         if (XRRigPlayer != null && teleportLocations != null && 
             currentLocationIndex >= 0 && currentLocationIndex < teleportLocations.locations.Count)

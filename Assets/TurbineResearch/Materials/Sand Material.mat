@@ -174,10 +174,10 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _HeightAmplitude: 0.0050000004
-    - _HeightCenter: -1.4999998
+    - _HeightAmplitude: 0.003
+    - _HeightCenter: -2.4999998
     - _HeightMapParametrization: 0
-    - _HeightMax: 1.2
+    - _HeightMax: 1
     - _HeightMin: 0.7
     - _HeightOffset: 0.05
     - _HeightPoMAmplitude: 2

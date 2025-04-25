@@ -1,39 +1,64 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class WeatherRopeManagerPair
+{
+    public GameObject weather;
+    public GameObject ropeManager;
+}
+
 public class EnvironmentController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> weatherEnvironments;
-    private GameObject currentEnvironment;
+    [SerializeField] private List<WeatherRopeManagerPair> environments;
+    private WeatherRopeManagerPair currentEnvironment;
     // Start is called before the first frame update
     void Start()
     {
-        if (weatherEnvironments != null && weatherEnvironments.Count > 0)
+        if (environments != null)
         {
             // Deactivate all environments initially
-            foreach (GameObject environment in weatherEnvironments)
+            foreach (var pair in environments)
             {
-                environment.SetActive(false);
+                pair.weather.SetActive(false);
+                pair.ropeManager.SetActive(false);
             }
             
-            // Activate the first environment by default
-            currentEnvironment = weatherEnvironments[0];
-            currentEnvironment.SetActive(true);
+            // Activate the normal weather by default
+            currentEnvironment = environments[0];
+            currentEnvironment.weather.SetActive(true);
+            currentEnvironment.ropeManager.SetActive(true);
         }
     }
     
     public void ActivateEnvironment(int index)
     {
-        if (index >= 0 && index < weatherEnvironments.Count)
+        if (environments != null && index >= 0 && index < environments.Count)
         {
             if (currentEnvironment != null)
             {
-                currentEnvironment.SetActive(false);
+                currentEnvironment.weather.SetActive(false);
+                currentEnvironment.ropeManager.SetActive(false);
             }
             
-            currentEnvironment = weatherEnvironments[index];
-            currentEnvironment.SetActive(true);
+            currentEnvironment = environments[index];
+            currentEnvironment.weather.SetActive(true);
+            currentEnvironment.ropeManager.SetActive(true);
+
+            if (index == 1)
+            {
+                GameManager.Instance.Boat.transform.position += new Vector3(0, 20, 0);
+            }
+
+            if (index == 0)
+            {
+                GameManager.Instance.Boat.transform.position -= new Vector3(0, 20, 0);
+            }
+
+            if (GameManager.Instance.currentLocationIndex == 0)
+            {
+                GameManager.Instance.TeleportToCurrentLocation();
+            }
         }
     }
 }
