@@ -15,5 +15,7 @@ EditorBuildSettings:
     path: Assets/TurbineResearch/Scenes/Turbines - Night.unity
     guid: afe681e349da65c468ef5679f7f98ddd
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a69138ba7ba89184c9024cff14e2d3b6, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: eb4a3628641d71c4eabc0896c7013849, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4b202a089ef693a40a464a56a4a0da26, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 69d9e6a22d5eac9499da32dca83a4240, type: 2}

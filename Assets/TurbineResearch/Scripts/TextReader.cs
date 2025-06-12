@@ -42,7 +42,14 @@ namespace TurbineResearch.Scripts
                     }
                     else
                     {
-                        table[loopCounter].Add(float.Parse(data));
+                        try
+                        {
+                            table[loopCounter].Add(float.Parse(data));
+                        }
+                        catch (Exception e) {
+                            Debug.Log(data);
+                        }  
+                        
                     }
                 }
 
