@@ -121,50 +121,6 @@ MonoBehaviour:
   m_ObsoleteScrollSpeed:
     m_OverrideState: 0
     m_Value: 1
---- !u!114 &-1811745144101829969
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a93fc1619b1174a9e2ee1094fe1496, type: 3}
-  m_Name: UnderwaterPostProcessHDRP
-  m_EditorClassIdentifier: 
-  active: 1
-  _version: 0
-  _enable:
-    m_OverrideState: 0
-    m_Value: 1
-  _copyOceanMaterialParamsEachFrame:
-    m_OverrideState: 0
-    m_Value: 1
-  _filterOceanData:
-    m_OverrideState: 0
-    m_Value: 1
-  _meniscus:
-    m_OverrideState: 0
-    m_Value: 1
-  _viewOceanMask:
-    m_OverrideState: 0
-    m_Value: 0
-  _disableOceanMask:
-    m_OverrideState: 0
-    m_Value: 0
-  _farPlaneMultiplier:
-    m_OverrideState: 0
-    m_Value: 0.013
-  _useHorizonSafetyMarginMultiplier:
-    m_OverrideState: 0
-    m_Value: 0
-  _horizonSafetyMarginMultiplier:
-    m_OverrideState: 1
-    m_Value: 0
-  _scaleSafetyMarginWithDynamicResolution:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +141,6 @@ MonoBehaviour:
   - {fileID: 7520254489014219190}
   - {fileID: 8302438807474390439}
   - {fileID: 8091003526432046029}
-  - {fileID: -1811745144101829969}
 --- !u!114 &462424666020317118
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -667,7 +622,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 3
   meteringMode:
     m_OverrideState: 0
     m_Value: 2
@@ -678,8 +633,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 10.58608
   compensation:
-    m_OverrideState: 0
-    m_Value: 0.23
+    m_OverrideState: 1
+    m_Value: 6.8
   limitMin:
     m_OverrideState: 0
     m_Value: -1
